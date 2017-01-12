@@ -3,27 +3,34 @@ package com.example.administrator.customproject.application;
 import android.app.Application;
 import android.content.Context;
 
-/**
- * Created by Administrator on 2016/12/13.
- */
+import com.example.administrator.customproject.dagger2.component.ApplicationComponent;
+import com.example.administrator.customproject.dagger2.component.DaggerApplicationComponent;
+import com.example.administrator.customproject.dagger2.module.ApiModule;
+import com.example.administrator.customproject.dagger2.module.ApplicationModule;
 
 public class AppHolder extends Application {
-
-    private AppComponent appComponent;
-
-    public static AppHolder get(Context context) {
-        return (AppHolder) context.getApplicationContext();
-    }
+    private ApplicationComponent mAppComponent;
 
     @Override
     public void onCreate() {
         super.onCreate();
     }
 
-    public AppComponent getAppComponent() {
-        if (null != appComponent) {
-            // TODO
+    public static AppHolder get(Context context) {
+        return (AppHolder) context.getApplicationContext();
+    }
+
+    public ApplicationComponent getAppComponent() {
+        if (null == mAppComponent) {
+            mAppComponent = DaggerApplicationComponent.builder()
+                    .applicationModule(new ApplicationModule(this))
+                    .apiModule(new ApiModule(this))
+                    .build();
         }
-        return appComponent;
+        return mAppComponent;
+    }
+
+    public void setAppComponent(ApplicationComponent mAppComponent) {
+        this.mAppComponent = mAppComponent;
     }
 }
