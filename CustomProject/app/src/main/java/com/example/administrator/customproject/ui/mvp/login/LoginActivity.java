@@ -2,7 +2,6 @@ package com.example.administrator.customproject.ui.mvp.login;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 
@@ -13,7 +12,6 @@ import com.example.administrator.customproject.ui.mvp.main.MainActivity;
 import javax.inject.Inject;
 
 import butterknife.BindView;
-import butterknife.OnClick;
 
 public class LoginActivity extends BaseActivity implements LoginContract.LoginView {
     @BindView(R.id.username)
@@ -30,13 +28,6 @@ public class LoginActivity extends BaseActivity implements LoginContract.LoginVi
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
-    }
-
-    @OnClick(R.id.login)
-    void login(View view) {
-        String un = username.getText().toString();
-        String pw = password.getText().toString();
-        loginPresenter.login(LoginActivity.this, un, pw, "123456");
     }
 
     @Override
@@ -57,7 +48,11 @@ public class LoginActivity extends BaseActivity implements LoginContract.LoginVi
 
     @Override
     public void initEvent() {
-
+        login.setOnClickListener(v -> {
+            String un = username.getText().toString();
+            String pw = password.getText().toString();
+            loginPresenter.login(LoginActivity.this, un, pw, "123456");
+        });
     }
 
     @Override

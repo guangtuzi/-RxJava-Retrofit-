@@ -36,7 +36,7 @@ public class Api {
         mApiService = retrofit.create(ApiService.class);
     }
 
-    public void login(ProgressSubscriber<LoginResponse> subscriber, String username, String password, String deviceId) {
+    public void login(String username, String password, String deviceId, ProgressSubscriber<LoginResponse> subscriber) {
         mApiService.login(username, password, deviceId)
                 .map(new HttpResultFunc<>())
                 .subscribeOn(Schedulers.io())

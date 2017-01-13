@@ -26,12 +26,18 @@ public class UserLoginPresenter implements LoginContract.LoginPresenter {
     }
 
     public void login(Context context, String username, String password, String deviceId) {
-        api.login(new ProgressSubscriber<>(new SubscriberOnNextListener() {
-            @Override
-            protected void onNext(Object o) {
-                view.toMainActivity();
-            }
-        }, context), username, password, deviceId);
+        api.login(
+                username,
+                password,
+                deviceId,
+                new ProgressSubscriber<>(
+                        new SubscriberOnNextListener() {
+                            @Override
+                            protected void onNext(Object o) {
+                                view.toMainActivity();
+                            }
+                        }, context)
+        );
     }
 
     @Override

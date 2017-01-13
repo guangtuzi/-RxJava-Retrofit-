@@ -9,16 +9,21 @@ import com.example.administrator.customproject.dagger2.component.ActivityCompone
 import com.example.administrator.customproject.dagger2.component.DaggerActivityComponent;
 import com.example.administrator.customproject.dagger2.module.ActivityModule;
 
+import butterknife.ButterKnife;
+import butterknife.Unbinder;
 import rx.Subscription;
 
 public abstract class BaseActivity extends AppCompatActivity implements BaseView {
     private Context context;
     private ActivityComponent activityComponent;
     private Subscription sbscription;
+    private Unbinder unbinder;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+
+        unbinder = ButterKnife.bind(this);
 
         injectDagger();
         initViews();
@@ -40,6 +45,7 @@ public abstract class BaseActivity extends AppCompatActivity implements BaseView
     protected void onDestroy() {
         super.onDestroy();
 
+        unbinder.unbind();
         unSubscription();
     }
 
