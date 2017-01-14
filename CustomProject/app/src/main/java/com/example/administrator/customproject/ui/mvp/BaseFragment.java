@@ -12,9 +12,8 @@ import butterknife.ButterKnife;
 import butterknife.Unbinder;
 
 /**
- * Created by Administrator on 2017/1/14.
+ * fragment基类,所有fragment必须实现
  */
-
 public abstract class BaseFragment extends Fragment {
     private Context context;
     private Unbinder unbinder;

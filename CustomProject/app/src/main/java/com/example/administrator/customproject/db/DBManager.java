@@ -2,6 +2,9 @@ package com.example.administrator.customproject.db;
 
 import com.example.administrator.customproject.application.AppHolder;
 
+/**
+ * 数据库管理类
+ */
 public class DBManager {
     private DaoMaster mDaoMaster;
     private DaoSession mDaoSession;

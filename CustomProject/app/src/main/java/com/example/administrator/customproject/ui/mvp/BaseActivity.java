@@ -13,6 +13,9 @@ import butterknife.ButterKnife;
 import butterknife.Unbinder;
 import rx.Subscription;
 
+/**
+ * activity基类,所有activity必须实现
+ */
 public abstract class BaseActivity extends AppCompatActivity implements BaseView {
     private Context context;
     private ActivityComponent activityComponent;

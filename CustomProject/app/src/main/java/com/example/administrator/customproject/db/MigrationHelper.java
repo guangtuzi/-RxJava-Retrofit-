@@ -22,7 +22,7 @@ import java.util.Arrays;
 import java.util.List;
 
 /**
- * please call {@link #migrate(SQLiteDatabase, Class[])}
+ * 数据库更新时调用此类用来保留原有数据
  */
 public final class MigrationHelper {
     private static boolean isDebug = false;
