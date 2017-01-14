@@ -1,1 +1,1 @@
-include ':app', ':chatroommodule'
+include ':app', ':chatroommodule', ':dagger2testmodule'
