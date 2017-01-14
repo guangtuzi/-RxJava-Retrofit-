@@ -27,7 +27,11 @@ public class LoginActivity extends BaseActivity implements LoginContract.LoginVi
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_login);
+    }
+
+    @Override
+    protected int getContentViewId() {
+        return R.layout.activity_login;
     }
 
     @Override
@@ -43,7 +47,8 @@ public class LoginActivity extends BaseActivity implements LoginContract.LoginVi
 
     @Override
     public void initViews() {
-
+        username.setText("用户名");
+        password.setText("密  码");
     }
 
     @Override

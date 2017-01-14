@@ -23,8 +23,10 @@ public abstract class BaseActivity extends AppCompatActivity implements BaseView
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
+        if (0 != getContentViewId()) {
+            setContentView(getContentViewId());
+        }
         unbinder = ButterKnife.bind(this);
-
         injectDagger();
         initViews();
         initEvent();
@@ -57,6 +59,8 @@ public abstract class BaseActivity extends AppCompatActivity implements BaseView
             sbscription.unsubscribe();
         }
     }
+
+    protected abstract int getContentViewId();
 
     protected abstract void initViews();
 
