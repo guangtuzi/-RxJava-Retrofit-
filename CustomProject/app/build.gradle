@@ -74,4 +74,6 @@ dependencies {
     // base-Adapter
     compile 'com.zhy:base-rvadapter:3.0.3'
     compile 'com.zhy:base-adapter:3.0.3'
+    // 屏幕适配方案
+    compile 'com.zhy:autolayout:1.4.5'
 }

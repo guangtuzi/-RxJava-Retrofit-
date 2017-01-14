@@ -2,12 +2,12 @@ package com.example.administrator.customproject.ui.mvp;
 
 import android.content.Context;
 import android.os.Bundle;
-import android.support.v7.app.AppCompatActivity;
 
 import com.example.administrator.customproject.application.AppHolder;
 import com.example.administrator.customproject.dagger2.component.ActivityComponent;
 import com.example.administrator.customproject.dagger2.component.DaggerActivityComponent;
 import com.example.administrator.customproject.dagger2.module.ActivityModule;
+import com.zhy.autolayout.AutoLayoutActivity;
 
 import butterknife.ButterKnife;
 import butterknife.Unbinder;
@@ -16,7 +16,7 @@ import rx.Subscription;
 /**
  * activity基类,所有activity必须实现
  */
-public abstract class BaseActivity extends AppCompatActivity implements BaseView {
+public abstract class BaseActivity extends AutoLayoutActivity implements BaseView {
     private Context context;
     private ActivityComponent activityComponent;
     private Subscription sbscription;

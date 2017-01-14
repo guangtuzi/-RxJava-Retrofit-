@@ -4,6 +4,14 @@
 
     <uses-permission android:name="android.permission.INTERNET" />
 
+    <!--屏幕适配方案宽度和高度设置,单位：px-->
+    <meta-data
+        android:name="design_width"
+        android:value="768" />
+    <meta-data
+        android:name="design_height"
+        android:value="1280" />
+
     <application
         android:name=".application.AppHolder"
         android:allowBackup="true"
