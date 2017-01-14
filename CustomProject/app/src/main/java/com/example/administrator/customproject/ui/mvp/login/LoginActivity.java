@@ -2,6 +2,7 @@ package com.example.administrator.customproject.ui.mvp.login;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 
@@ -12,6 +13,7 @@ import com.example.administrator.customproject.ui.mvp.main.MainActivity;
 import javax.inject.Inject;
 
 import butterknife.BindView;
+import butterknife.OnClick;
 
 public class LoginActivity extends BaseActivity implements LoginContract.LoginView {
     @BindView(R.id.username)

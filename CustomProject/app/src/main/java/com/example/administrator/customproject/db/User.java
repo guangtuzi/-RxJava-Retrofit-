@@ -1,35 +1,30 @@
 package com.example.administrator.customproject.db;
 
 import org.greenrobot.greendao.annotation.Entity;
-import org.greenrobot.greendao.annotation.Id;
-import org.greenrobot.greendao.annotation.Transient;
 import org.greenrobot.greendao.annotation.Generated;
 
 @Entity
 public class User {
-    @Id
-    private Long id;
-    private String name;
-    @Transient
-    private int tempUsageCount; // not persisted  
-    @Generated(hash = 873297011)
-    public User(Long id, String name) {
-        this.id = id;
-        this.name = name;
+    private String username;
+    private String password;
+    @Generated(hash = 2090636610)
+    public User(String username, String password) {
+        this.username = username;
+        this.password = password;
     }
     @Generated(hash = 586692638)
     public User() {
     }
-    public Long getId() {
-        return this.id;
+    public String getUsername() {
+        return this.username;
     }
-    public void setId(Long id) {
-        this.id = id;
+    public void setUsername(String username) {
+        this.username = username;
     }
-    public String getName() {
-        return this.name;
+    public String getPassword() {
+        return this.password;
     }
-    public void setName(String name) {
-        this.name = name;
+    public void setPassword(String password) {
+        this.password = password;
     }
 }  

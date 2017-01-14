@@ -21,7 +21,7 @@ public class AppHolder extends Application {
 
         context = getApplicationContext();
 
-        Logger.init(TAG).logLevel(LogLevel.FULL);// 初始化日志
+        Logger.init(TAG).logLevel(LogLevel.FULL);// 初始化日志(默认打印全部日志,上线时请隐藏Log)
 
     }
 

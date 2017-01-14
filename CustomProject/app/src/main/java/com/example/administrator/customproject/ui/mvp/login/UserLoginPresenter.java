@@ -3,6 +3,8 @@ package com.example.administrator.customproject.ui.mvp.login;
 import android.content.Context;
 
 import com.example.administrator.customproject.dagger2.scope.ActivityContext;
+import com.example.administrator.customproject.db.DBManager;
+import com.example.administrator.customproject.db.User;
 import com.example.administrator.customproject.net.Api;
 import com.example.administrator.customproject.net.ProgressSubscriber;
 import com.example.administrator.customproject.net.SubscriberOnNextListener;
@@ -26,6 +28,8 @@ public class UserLoginPresenter implements LoginContract.LoginPresenter {
     }
 
     public void login(Context context, String username, String password, String deviceId) {
+        DBManager.getInstance().getSession().getUserDao().save(new User(username, password));
+        view.toMainActivity();
         api.login(
                 username,
                 password,
