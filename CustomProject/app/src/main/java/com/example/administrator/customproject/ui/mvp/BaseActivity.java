@@ -27,6 +27,7 @@ public abstract class BaseActivity extends AutoLayoutActivity implements BaseVie
         super.onCreate(savedInstanceState);
 
         if (0 != getContentViewId()) {
+            // 必须要先设置view才能注册butterKnife,其他注解框架同理
             setContentView(getContentViewId());
         }
         unbinder = ButterKnife.bind(this);

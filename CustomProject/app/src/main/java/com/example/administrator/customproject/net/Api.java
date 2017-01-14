@@ -16,11 +16,6 @@ import rx.android.schedulers.AndroidSchedulers;
 import rx.functions.Func1;
 import rx.schedulers.Schedulers;
 
-/**
- * Api
- * <p>
- * Created by SLAN on 2016/6/29.
- */
 public class Api {
     private Context mContext;
     private ApiService mApiService;

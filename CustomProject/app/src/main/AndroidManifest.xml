@@ -4,13 +4,6 @@
 
     <uses-permission android:name="android.permission.INTERNET" />
 
-    <!--屏幕适配方案宽度和高度设置,单位：px-->
-    <meta-data
-        android:name="design_width"
-        android:value="768" />
-    <meta-data
-        android:name="design_height"
-        android:value="1280" />
 
     <application
         android:name=".application.AppHolder"
@@ -19,6 +12,15 @@
         android:label="@string/app_name"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
+
+        <!--屏幕适配方案宽度和高度设置,单位：px-->
+        <meta-data
+            android:name="design_width"
+            android:value="768" />
+        <meta-data
+            android:name="design_height"
+            android:value="1280" />
+
         <activity android:name=".ui.mvp.login.LoginActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

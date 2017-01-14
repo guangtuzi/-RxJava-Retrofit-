@@ -13,10 +13,6 @@ import dagger.Module;
 import dagger.Provides;
 import okhttp3.OkHttpClient;
 
-/**
- * Created by Administrator on 2017/1/12.
- */
-
 @Module
 public class ApiModule {
     Context mContext;

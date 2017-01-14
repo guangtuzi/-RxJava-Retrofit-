@@ -2,6 +2,7 @@ package com.example.administrator.customproject.ui.mvp;
 
 import android.app.Fragment;
 import android.content.Context;
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.view.LayoutInflater;
@@ -37,6 +38,12 @@ public abstract class BaseFragment extends Fragment {
         } else {
             return super.onCreateView(inflater, container, savedInstanceState);
         }
+    }
+
+    public void startActivity(Class<?> clazz) {
+        Intent intent = new Intent(context, clazz);
+        intent.setFlags(Intent.FLAG_ACTIVITY_REORDER_TO_FRONT);
+        startActivity(intent);
     }
 
     @Override

@@ -14,10 +14,6 @@ import javax.inject.Singleton;
 import dagger.Component;
 import okhttp3.OkHttpClient;
 
-/**
- * Created by Anthony on 2016/6/13.
- * Class Note:
- */
 @Singleton
 @Component(modules = {ApplicationModule.class, ApiModule.class})
 public interface ApplicationComponent {
